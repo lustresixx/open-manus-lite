@@ -1,0 +1,21 @@
+[project]
+name = "open-manus-lite"
+version = "0.1.0"
+description = "A learning-focused, lightweight reimplementation of OpenManus"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "你自己" }]
+
+dependencies = [
+  "pydantic>=2.6",
+  "typer>=0.12",
+  "rich>=13.7",
+  "openai>=1.40.0",
+]
+
+[project.scripts]
+open-manus-lite = "main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
