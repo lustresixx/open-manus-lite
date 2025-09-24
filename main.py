@@ -1,7 +1,7 @@
 from src.config_loader import load_config
 
 def main():
-    cfg = load_config("config/config.toml")
+    cfg = load_config()
     print("LLM model:", cfg.llm.model)
     print("Base URL:", cfg.llm.base_url)
     print("Temperature:", cfg.llm.temperature)

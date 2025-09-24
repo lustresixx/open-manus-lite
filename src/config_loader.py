@@ -26,9 +26,9 @@ PROJECT_ROOT = get_project_root()
 
 def _get_config_path() -> Path:
     root = PROJECT_ROOT
-    config_path = root / "config" / "config.toml"
-    if config_path.exists():
-        return config_path
+    # config_path = root / "config" / "config.toml"
+    # if config_path.exists():
+    #     return config_path
     example_path = root / "config" / "config.example.toml"
     if example_path.exists():
         return example_path
@@ -70,8 +70,11 @@ def _postprocess_env(d: Dict[str, Any]) -> Dict[str, Any]:
         "temperature": base_llm.get("temperature", 1.0),
     }
 
+    config_dict = {
+        "llm": default_settings
+    }
 
-    return default_settings
+    return config_dict
 
 def load_config() -> AppConfig:
     """
